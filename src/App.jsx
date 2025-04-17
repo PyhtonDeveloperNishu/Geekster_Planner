@@ -4,7 +4,6 @@ import TaskList from './components/TaskList';
 
 function App() {
   const [tasks,setTasks]= useState([]);
-  
 
   useEffect(()=>{
     const stored = localStorage.getItem('tasks');
@@ -18,8 +17,17 @@ function App() {
   })
     
   return (
-    <div>
-      <h1>Geekster Education Planner</h1>
+    <div style={{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      justifyContent:'center'
+
+    }}>
+      <h2 style={{
+        textAlign:'center',
+        
+      }}>Geekster Education Planner</h2>
       <TaskForm  setTasks={setTasks}/>
       <TaskList tasks={tasks} setTasks={setTasks}/>
     </div>
